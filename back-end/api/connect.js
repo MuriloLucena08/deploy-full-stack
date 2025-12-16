@@ -1,10 +1,7 @@
-import {MongoClient} from "mongodb";
-import {password} from "./key.js";
+import { MongoClient } from "mongodb";
+import "dotenv/config";
 
-
-
-const URI = 
-  `mongodb+srv://murilo-lucena:${password}@cluster0.jbmfvrm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const URI = process.env.MONGO_URI;
 
 const client = new MongoClient(URI);
 

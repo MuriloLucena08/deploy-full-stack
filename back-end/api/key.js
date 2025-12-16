@@ -1,1 +1,0 @@
-export const password = encodeURIComponent("MadinDev@0892");
