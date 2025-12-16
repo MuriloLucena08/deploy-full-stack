@@ -80,36 +80,26 @@ Observação: apesar de existirem várias tracks com imagens diferentes, o áudi
 - **Servidor Monolítico:** O build estático do frontend é servido diretamente pelo backend Express, simplificando o deploy.
 - **Resolução de Problemas de Deploy:** Experiência prática com desafios comuns em ambientes de produção, como configuração de DNS, variáveis de ambiente e dependências.
 
-🔐 Segurança
+---
 
-Nenhuma credencial sensível está hardcoded no código
+### 🔐 Segurança
 
-Uso de variáveis de ambiente para dados sensíveis
+- Nenhuma credencial sensível está "hardcoded" no código.
+- Uso de variáveis de ambiente (`.env`) para armazenar dados sensíveis como a string de conexão do banco de dados.
+- O arquivo `.env` é devidamente ignorado pelo Git através do `.gitignore`.
+- Utilização de um usuário específico no MongoDB com permissões limitadas para a aplicação.
 
-.env ignorado no controle de versão
+---
 
-Usuário específico no MongoDB para a aplicação
+### 🔮 Melhorias Futuras
 
-Para o escopo do projeto, as práticas de segurança adotadas são adequadas.
+- **Migrar o backend para TypeScript:** Adicionar tipagem estática para aumentar a robustez e facilitar a manutenção do código.
+- **Refatorar a arquitetura do backend:** Organizar o código em `routes`, `controllers` e `services` para melhor separação de responsabilidades.
+- **Implementar busca e paginação:** Adicionar endpoints para buscar e paginar os resultados de músicas e artistas.
+- **Restringir CORS por domínio:** Configurar o CORS para aceitar requisições apenas do domínio do frontend em produção, aumentando a segurança.
+- **Implementar cache de dados:** Adicionar uma camada de cache para as requisições mais frequentes, diminuindo a carga no banco de dados e melhorando a performance.
 
-🔮 Melhorias futuras
-
-🔧 Migrar o backend para TypeScript
-
-📁 Melhorar a organização do projeto (routes, controllers, services)
-
-🔍 Implementar busca e paginação de músicas
-
-🔐 Restringir CORS por domínio
-
-⚡ Cache de dados mais acessados
-
-☁️ Armazenar músicas em serviços como S3 ou similares
-
-🎼 Integrar APIs externas apenas para metadados musicais
-
-📌 Observações finais
-
-Este projeto representa um MVP funcional, com foco em aprendizado prático e resolução de problemas reais de desenvolvimento. Ele está em constante evolução e serve como base para melhorias futuras.
-
-Deploy em produção concluído com sucesso 🚀
+---
+Este projeto representa um MVP (Minimum Viable Product) funcional, com foco em aprendizado prático e resolução de problemas reais de desenvolvimento. Ele está em constante evolução e serve como base para melhorias futuras.
+<br>
+**Deploy em produção concluído com sucesso!** 🚀
